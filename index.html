@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Test</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+</head>
+  <body>
+    <script>
+        $(document).ready(function(){
+            
+            var navbar = [ "Snapshot","Key radtio","Peers","Financial","Owernership","News","Events"];
+            var card_data = { 'ISIN' :"ADV456F23G8JK",'Face value' :"98,3456 cr",'Total Share' :"98,3456 cr",'Total Income' :"1236.5 ",
+            'Profit After Tax' :"123456 cr ",'Promotor Holding' :"23% ",'EPS' :"<i class='bi bi-currency-rupee'></i>42.09 ",'P/E' :"48.9",'P/B' :"3.33",
+            'Market captialistaion' :"1,00,289.90 cr ",'Enterprise value' :"1,00,289.90 cr ",'Book Value' :"1,00,289.90 cr ",'Intrinsic Value' :"95,289.90 cr ",
+            'devided Yield' :"95,289.90 cr ",'Earning Yield' :"95,289.90 cr ",'Sector' :"Real Estate",'Sub Sector' :"Auto Parts ",'Category' :"PrelPO ",
+            'Cash Flow Operation' :"1,00,289 cr ",'Cash Flow Financing' :"1,00,289 cr "};
+            let icon_details = [
+                                    {
+                                        col_id: 1,
+                                        col_name: "icon1.png",
+                                        col_data: "Management <br> Trustworthy  ",
+                                        
+                                    },
+                                    {
+                                        col_id: 2,
+                                        col_name: "icon2.png",
+                                        col_data: "Accounting Practice<br>Clean ",
+                                       
+                                    },
+                                    {
+                                        col_id: 3,
+                                        col_name: "icon3.png",
+                                        col_data: "Profitability<br>Outstanding ",
+                                       
+                                    },
+                                    {
+                                        col_id: 4,
+                                        col_name: "icon4.png",
+                                        col_data: "Solvency<br>Exceed Expectations",
+                                       
+                                    },
+                                    {
+                                        col_id: 5,
+                                        col_name: "icon5.png",
+                                        col_data: "Growth<br>Meet Expectations",
+                                       
+                                    },
+                                    {
+                                        col_id: 6,
+                                        col_name: "6.png",
+                                        col_data: "Valuation<br>Undervalued ",
+                                       
+                                    },
+                                    {
+                                        col_id: 7,
+                                        col_name: "icon6.png",
+                                        col_data: "Business Type <br>Fairly Valued  ",
+                                       
+                                    },
+                                    {
+                                        col_id: 8,
+                                        col_name: "icon7.png",
+                                        col_data: "Business Type <br>Fairly Valued",
+                                       
+                                    },
+                                   
+                                ];
+                icon_details.forEach(function(data) {
+                    $('.icon-gallery-show').append('<div class="col-md-6 px-1 py-2">'+
+                                        '<div class="bg-white rounded icon-gallery"><img src="'+data.col_name+'" alt="">'+
+                                        '<p>'+data.col_data+'</p></div>'+
+                                   ' </div>'
+                        );
+                    });                   
+           
+            $.each( navbar, function( index, value ) {
+             $('.nab-bar-data').append('<li class="nav-items">'+value+'</li>');
+            });
+
+            $.each( card_data, function( index, value ) {
+             $('.home-page-data').append('<div class="col-sm-3 home-card-data pb-2 px-2">'+
+                            '<div class="card shadow"> <p class="home-info-icon" ><i  class="bi bi-info-circle-fill"></i></P>'+
+                            '<div class="card-body home-info-card-body">'+
+                                '<h6 class="card-title">'+index+'</h6>'+
+                                '<p class="card-text">'+value+'</p>'+
+                           ' </div>'+
+                            '</div>'+
+                        '</div>'
+                        );
+            });
+
+            $(".nav-items").mouseover(function(){
+                $(this).addClass('Snapshot , shadow');
+            });
+            $(".nav-items").mouseout(function(){
+                $(this).removeClass('Snapshot , shadow');
+            });
+        });
+    </script>
+<style>
+    @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
+    .main{
+        height: 100vh;
+        
+    }
+    .theme-btn{
+    color: white;
+    border: none;
+    border-radius: 15px;
+    font-size: 12px;
+    padding: 2px 2px 2px 2px;
+    background-color: #ff03c9;
+    }
+    .home-info-icon{
+        margin-left: 175px;
+        padding-left: 0px;
+        margin-top: 10px;
+        position: absolute;
+    }
+    .home-info-card-body{
+        position: relative;
+    }
+    .home-card-data p {
+        font-size: 10px;
+    }
+    .home-card-data h6 {
+        font-size: 10px;
+    }
+    body{
+        font-family: 'Cabin', sans-serif;
+        /* overflow-y: hidden; */
+    }
+    .main-color{
+        color: #681e76;
+    }
+    ul li{
+        list-style: none;
+        padding: 5px 0px 9px 0px;
+    }
+    .nav-items{
+        padding: 3px 16px 15px 20px;
+        font-size: 15px;
+        font-weight: 400;
+        transition: padding 1s;
+    }
+    .Snapshot{
+        padding: 3px 16px 15px 17px;
+        border-left: 3px solid #681e76;
+        background-color: white;
+        transition: padding 1s;
+        color: #681e76;
+        font-weight: 500;
+        cursor: pointer;
+        
+    }
+   
+    .left-bar-header{
+        background-color: #80808042;
+    }
+    .pro-only{
+        background-color: #ff03c9;
+        color: white;
+        max-width: 61px;
+        font-size: 10px;
+        /* padding: 0px 0px 0px 0px; */
+        border: none;
+    }
+    .card{
+        border: none;
+    }
+    .footer-data{
+        padding: 5px 0px 9px 0px;
+    }
+    .footer-data-list li{
+        padding:3px 0px 0px 0px;
+        display: inline;
+        padding: 5px 0px 9px 0px;
+    }
+    .footer-data-list{
+        border: 1px dashed #681e76;
+    }
+    .icon-gallery{
+        align-items: center;
+        text-align: center;
+    }
+    .icon-gallery img{
+        max-height: 50px;
+    }
+    .card-body{
+        font-size: 12px;
+    }
+
+</style>
+
+    <div class="container-fluid ">
+        <div class="row px-0">
+            <div class="col-md-2    px-0" style="width: 14%;">
+                <section class="left-bar main px-0">
+                    <ul class="nab-bar-data left-bar-header pt-4 px-0">
+                        
+                    </ul>
+                    <div class="feedback px-0" >
+                        <div class="card  shadow pt-4 px-0" style="height:47vh">
+                            <center><button class="pro-only rounded"><i class="bi bi-lock-fill"></i>Pro only</button></center>
+                            <div class="card-body px-0">
+                              <ul class="footer-data px-2">
+                                <li >
+                                    RATING
+                                    <div>
+                                        <ul class="footer-data-list px-2">
+                                            <li><i class="bi bi-star"></i></li>
+                                            <li><i class="bi bi-star"></i></li>
+                                            <li><i class="bi bi-star"></i></li>
+                                            <li><i class="bi bi-star"></i></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li >
+                                    RECOMMENDATION
+                                    <div>
+                                        <ul class="footer-data-list px-2">
+                                            <li>Strong Buy</li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li >
+                                    ACCUMULATION RANGE
+                                    <div>
+                                        <ul class="footer-data-list px-2">
+                                            <li><i class='bi bi-currency-rupee'></i>1400-<i class='bi bi-currency-rupee'></i>1450</li>
+                                        </ul>
+                                    </div>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                    </div>
+
+                </section>
+            </div>
+            <div class="col-md-7 pt-4 " style="width: 61%;">
+                <section class="main-container main">
+                    <h5 class="main-color ">Essentials </h5>
+                    <div class="row home-page-data pb-2">  
+                    </div>
+                    <h5 class="main-color ">Growth</h5>
+                    <div class="row home-page-growth">
+                        <div class="col-sm-6 home-card-data pb-2 px-2">
+                             <div class="card shadow">
+                             <div class="card-body">
+                                 <h6 class="card-title">Compounded Sales Growth <button class="pro-only rounded" style="margin-left: 167px;"><i class="bi bi-lock-fill"></i>Pro only</button></h6>
+                                 <div class="row">
+                                    <div class="col-md-4">
+                                        <div>45% <br>10 Year </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div>45% <br>10 Year </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div>
+                                            <div class="row " style="border: 1px dashed black;">
+                                                <div class="col-md-6">16%</div>
+                                                <div class="col-md-6">5%</div>
+                                            </div>
+                                            <div class="row " >
+                                                <div class="col-md-6">3 Years</div>
+                                                <div class="col-md-6">TTM</div>
+                                            </div> 
+                                        
+                                        </div>
+                                    </div>
+                                 </div>
+                             </div>
+                             </div>
+                         </div> 
+                         <div class="col-sm-6 home-card-data pb-2 px-2">
+                            <div class="card shadow">
+                            <div class="card-body">
+                                <h6 class="card-title">Compounded Profit Growth<button class="pro-only rounded" style="margin-left: 167px;"><i class="bi bi-lock-fill"></i>Pro only</button></h6>
+                                <div class="row">
+                                   <div class="col-md-4">
+                                       <div>45% <br>10 Year </div>
+                                   </div>
+                                   <div class="col-md-4">
+                                       <div>45% <br>10 Year </div>
+                                   </div>
+                                   <div class="col-md-4">
+                                       <div>
+                                           <div class="row " style="border: 1px dashed black;">
+                                               <div class="col-md-6">16%</div>
+                                               <div class="col-md-6">5%</div>
+                                           </div>
+                                           <div class="row " >
+                                               <div class="col-md-6">3 Years</div>
+                                               <div class="col-md-6">TTM</div>
+                                           </div> 
+                                       
+                                       </div>
+                                   </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="col-md-3 pt-4 ">
+                <section class="right-bar main">
+                    <div class="row ">
+                        <div class="col-md-12 py-3 mb-2 rounded " style="background-color: #80808042;">
+                            <div class="row px-2 justify-content-between">
+                               <div class="col-md-8"> <h6 class="">HDFC Bank Ltd. </h6></div><div class="col-md-2"><i class="bi bi-bookmark-fill"></i></div>
+                               <div class="col-md-7"> <p class=""> 1,890.45 + 46.4 (+3%) </p></div><div class="col-md-5"><button class="theme-btn">Place Order</button></div>
+                               <hr>
+                               <div class="col-md-8">ROFR Required </div><div class="col-md-3"><div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                                <label class="form-check-label" for="flexSwitchCheckDefault">ON</label>
+                              </div></div>
+                               <div class="col-md-7" >
+                                Available in Depository 
+                               <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                        <label class="form-check-label" for="defaultCheck1">
+                                            CDsL 
+                                        </label>
+                                      </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                        <label class="form-check-label" for="defaultCheck1">
+                                            CDsL 
+                                        </label>
+                                      </div>
+                                </div>
+                               </div>
+                               </div>
+                               <div class="col-md-7" >
+                                Available for Investment 
+                               <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                        <label class="form-check-label" for="defaultCheck1">
+                                            Primary 
+                                        </label>
+                                      </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                        <label class="form-check-label" for="defaultCheck1">
+                                            Secondary 
+                                        </label>
+                                      </div>
+                                </div>
+                               </div>
+                               </div>
+                              </div>
+                        </div>
+                        <div class="col-md-12 rounded pt-2 rounded" style="background-color: #80808042;">
+                            <div class="left-header-des">
+                                  <h5 class="card-title">Investment Checklist </h5>
+                                  <div class="row pt-4 px-3 justify-content-between icon-gallery-show">
+                                    
+                                    
+                                  </div>
+                                 
+                                </div>
+                        </div>
+
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+  </body>
+</html>
